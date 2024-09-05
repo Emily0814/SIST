@@ -1,0 +1,13 @@
+Java > 언어
+Oracle > 언어
+
+mdn web docs
+
+
+
+CSS 중요 
+1. 셀렉터
+2. 박스 모델
+
+
+
