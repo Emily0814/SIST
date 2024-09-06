@@ -7,6 +7,7 @@
     <style>
         div > input {
             display: block;
+            margin-bottom: 5px;
         }
     </style>    
 </head>
@@ -47,7 +48,7 @@
             - BOM > name 식별자 사용
             - DOM > name, id, class 등 > 태그 검색 용이
             - CSS 조작 가능(BOM 불가능)
-            - PCDATA 조작 가능(BOM 불가능)
+            - PCDATA90oi 조작 가능(BOM 불가능)
             - 동적 태그 생성, 동적 속성 생성(BOM 불가능 > <option> 유일)
             - DOM Level 1 > DOM Level 2 > DOM Level 3
         
@@ -86,6 +87,21 @@
         for (var i=0; i<txts.length; i++) {
             txts[i].value = i;
         }
+
+        //DOM > name > 잘 사용 안함
+        document.getElementsByName('txt1')[0].value = '홍길동';
+
+        //DOM > tagName
+        var input = document.getElementsByTagName('input');
+        for (var i=0; i<input.length; i++) {
+            input[i].value = i;
+        }
+
+        //CSS 검색
+        document.querySelector('#txt1').value = '아무개';
+        document.querySelector('.txts:nth-child(2)').value = '하하하';
+        console.log(document.querySelectorAll('.txts').length);
+
 
     </script>
 
