@@ -6,67 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box {
+        #box1 #box2 #box3 #box4 {
             width: 680px;
-            margin: 30px auto
+            margin: 10px auto;
+            border: 0px solid black;
         }
 
-        #box1 img #box2 img #box3 img #box4 img {
+        #box1 div,
+        #box2 div,
+        #box3 div,
+        #box4 div {
             float: left;
             margin-right: -10px;
             border: 10px solid black;
             overflow: hidden;
+            margin-bottom: 10px;
         }
 
-        .box>img {
-            border: 10px solid black;
-            float: left;
-            /* margin-bottom: 10px; */
-            margin-right: -10px;
-            overflow: hidden;
-        }
-
-        #box1>img {
+        #box1 div img {
             display: block;
             transform: translate(-126px, 0px);
             transition: all .5s;
         }
 
-        #box1>img:hover {
+        #box1 div:hover img {
+            transform: translate(0px, 0px);
+        }
+
+        #box2 div img {
+            display: hidden;
+            transform: translate(0px, 0px);
+            transition: all .5s;
+        }
+
+        #box2 div:hover img {
             transform: translate(0px, 0px);
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <div id="box1" class="box">
-            <img src="/css/images/rect_icon01.png">
-            <img src="/css/images/rect_icon02.png">
-            <img src="/css/images/rect_icon03.png">
-            <img src="/css/images/rect_icon04.png">
-            <img src="/css/images/rect_icon05.png">
+    <div style="width: 700px; margin: 30px auto;">
+        <div id="box1">
+            <div><img src="/css/images/rect_icon02.png"></div>
+            <div><img src="/css/images/rect_icon01.png"></div>
+            <div><img src="/css/images/rect_icon03.png"></div>
+            <div><img src="/css/images/rect_icon04.png"></div>
+            <div><img src="/css/images/rect_icon05.png"></div>
         </div>
-        <div id="box2" class="box">
-            <img src="/css/images/rect_icon01.png">
-            <img src="/css/images/rect_icon02.png">
-            <img src="/css/images/rect_icon03.png">
-            <img src="/css/images/rect_icon04.png">
-            <img src="/css/images/rect_icon05.png">
+        <div id="box2">
+            <div><img src="/css/images/rect_icon01.png"></div>
+            <div><img src="/css/images/rect_icon02.png"></div>
+            <div><img src="/css/images/rect_icon03.png"></div>
+            <div><img src="/css/images/rect_icon04.png"></div>
+            <div><img src="/css/images/rect_icon05.png"></div>
         </div>
-        <div id="box3" class="box">
-            <img src="/css/images/rect_icon01.png">
-            <img src="/css/images/rect_icon02.png">
-            <img src="/css/images/rect_icon03.png">
-            <img src="/css/images/rect_icon04.png">
-            <img src="/css/images/rect_icon05.png">
+        <div id="box3">
+            <div><img src="/css/images/rect_icon01.png"></div>
+            <div><img src="/css/images/rect_icon02.png"></div>
+            <div><img src="/css/images/rect_icon03.png"></div>
+            <div><img src="/css/images/rect_icon04.png"></div>
+            <div><img src="/css/images/rect_icon05.png"></div>
         </div>
-        <div id="box4" class="box">
-            <img src="/css/images/rect_icon01.png">
-            <img src="/css/images/rect_icon02.png">
-            <img src="/css/images/rect_icon03.png">
-            <img src="/css/images/rect_icon04.png">
-            <img src="/css/images/rect_icon05.png">
+        <div id="box4">
+            <div><img src="/css/images/rect_icon01.png"></div>
+            <div><img src="/css/images/rect_icon02.png"></div>
+            <div><img src="/css/images/rect_icon03.png"></div>
+            <div><img src="/css/images/rect_icon04.png"></div>
+            <div><img src="/css/images/rect_icon05.png"></div>
         </div>
     </div>
 </body>
