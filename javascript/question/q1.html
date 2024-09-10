@@ -5,69 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <style>
-        h1 {
-            font-family: 'GmarketSansMedium';
-            color: #777;
-        }
-
-        div button {
-            font-family: 'GmarketSansMedium';
-            color: #777;
-        }
-    </style> -->
     <style>
-        h1, div, input {
-            color: #777777;
-            font-weight: bold;
-        }
-        input[type=text] {
-            outline: none;
-        }
-
         form {
+            /* font-family: 'GmarketSansMedium'; */
+            color: #777;
+            font-weight: bold;
+            width: 200px;
             margin: 20px auto;
         }
 
         form>div {
             margin-bottom: 15px;
         }
+
+        form>div>input {
+            display: block;
+            margin-bottom: 5px;
+            outline: none;
+        }
+
+        #txtId {
+            width: 150px;
+        }
+
+        #txtMessage {
+            width: 250px;
+            border: 0px solid transparent;
+            outline: none;
+            color: red;
+        }
     </style>
-    <script>var txtName, txtAge, txtNick, btnLong, btnShort;
+    <script>
+        var txtId, txtMessage;
 
         function init() {
-            txtName = window.document.form1.txtName;
-            txtAge = window.document.form1.txtAge;
-            txtNick = window.document.form1.txtNick;
-            btnLong = window.document.form1.btnLong;
-            btnShort = window.document.form1.btnShort;
-
-            btnLong.onclick = resizeLong;
-            btnShort.onclick = resizeShort;
+            txtId = window.document.form1.txtId;
+            txtMessage = window.document.form1.txtMessage;
+            txtId.onkeyup = valid;
         }
 
-        function resizeShort() {
-            txtName.size = 20;
-            txtAge.size = 20;
-            txtNick.size = 20;
+        function valid() {
+            if (txtId.value.length == 0) {
+                txtMessage.value = "";
+            } else if (txtId.value.length < 4) {
+                txtMessage.value = "아이디가 너무 짧습니다.";
+            } else if (txtId.value.length > 12) {
+                txtMessage.value = "아이디가 너무 깁니다.";
+            } else {
+                txtMessage.value = "아이디가 적합합니다.";
+            }
         }
-
-        function resizeLong() {
-            txtName.size = 50;
-            txtAge.size = 50;
-            txtNick.size = 50;
-        }</script>
-
+    </script>
 </head>
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" onload="init();">
     <form name="form1">
-        <h1>데이터 입력</h1>
-        <div>이름: <input type="text" name="txtName"></div>
-        <div>나이: <input type="text" name="txtAge"></div>
-        <div>별명: <input type="text" name="txtNick"></div>
-        <div><input type="button" value="Long" name="btnLong"> <input type="button" value="Short" name="btnShort"></div>
+        <h1>회원가입</h1>
+        <div>
+            아이디: <input type="text" name="txtId" autofocus><input type="text" name="txtMessage" id="txtMessage">
+        </div>
     </form>
+
 </body>
 
 </html>
