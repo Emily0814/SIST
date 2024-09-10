@@ -34,13 +34,56 @@
         }
 
         #box2 div img {
-            display: hidden;
-            transform: translate(0px, 0px);
+            display: block;
+            opacity: 0;
             transition: all .5s;
         }
 
         #box2 div:hover img {
-            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+
+        #box3 div img {
+            display: block;
+            transform: scale(0, 0);
+            transition: all .5s;
+            opacity: 0;
+            /* 투명도 */
+        }
+
+        #box3 div:hover img {
+            transform: scale(1, 1);
+            opacity: 1;
+        }
+
+        #box4 div img {
+            transform: translate(0px, -126px) scale(0, 0) rotate(0deg);
+            display: block;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        /* 
+        
+            1. translate(x, y): 요소를 X축과 Y축으로 이동시킵니다.
+            - translate(0px, -126px): X축으로는 이동하지 않고(0px), Y축으로 위쪽으로 126px 이동합니다.
+            - translate(0px, 0px): hover 시 원래 위치로 돌아옵니다.
+
+            2. scale(x, y): 요소의 크기를 X축과 Y축으로 조절합니다.
+            - scale(0, 0): 요소의 크기를 0으로 만들어 보이지 않게 합니다.
+            - scale(1, 1): hover 시 원래 크기로 돌아옵니다.
+
+            3. rotate(angle): 요소를 지정된 각도만큼 회전시킵니다.
+            - rotate(0deg): 처음에는 회전하지 않습니다.
+            - rotate(360deg): hover 시 360도 회전합니다 (한 바퀴 돕니다).
+
+        
+        */
+
+
+        #box4 div:hover img {
+            transform: translate(0px, 0px) scale(1, 1) rotate(360deg);
+            opacity: 1;
         }
     </style>
 </head>
